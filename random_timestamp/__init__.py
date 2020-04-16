@@ -1,5 +1,5 @@
 __title__ = 'random_timestamp'
-__version__ = '1.0.1'
+__version__ = '1.1'
 __author__ = "FENG Hao"
 __license__ = 'GPL v3.0'
 
