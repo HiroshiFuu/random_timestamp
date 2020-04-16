@@ -1,5 +1,5 @@
 __title__ = 'random_timestamp'
-__version__ = '1.0.0'
+__version__ = '1.0.1'
 __author__ = "FENG Hao"
 __license__ = 'GPL v3.0'
 
@@ -9,19 +9,23 @@ from datetime import timedelta as td, datetime as dt, date, time
 import calendar as cal
 
 
-# Function which generates random datetime object
-def generate_datetime(date):
+# Function which generates random time object
+def generate_random_time():
     hour = randint(0, 23)
     minute = randint(0, 59)
     second = randint(0, 59)
-    tm = time(hour, minute, second)
-    return dt.combine(date, tm)
+    return time(hour, minute, second)
+
+
+# Function which generates random datetime object
+def generate_datetime(date):
+    return dt.combine(date, generate_random_time())
 
 
 # Function which for users to access
 def random_timestamp(year=None, month=None, day=None, part=None):
     if part == 'TIME':
-        return generate_datetime(dt.now().date()).time()
+        return generate_random_time()
     else:
         try:
             year = int(year)
