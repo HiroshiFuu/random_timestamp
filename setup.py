@@ -12,16 +12,16 @@ long_description = open(readme_file).read()
 
 
 setup(name='random_timestamp',
-      version='1.0.1',
+      version='1.1',
       description='A Random Timestamp Generator',
       long_description=long_description,
       long_description_content_type='text/markdown',
       author='FENG Hao',
       author_email='hiroshifuu@outlook.com',
       url='https://github.com/HiroshiFuu/random_timestamp',
-      download_url='https://pypi.python.org/pypi/random_timestamp',
+      download_url='https://pypi.python.org/pypi/random-timestamp',
       license='GPL v3.0',
-      packages=['random_timestamp'],
+      packages=['random-timestamp'],
       include_package_data=True,
       keywords='random date time timestamp',
       classifiers=[
