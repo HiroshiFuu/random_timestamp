@@ -20,35 +20,36 @@ def generate_datetime(date):
 
 # Function which for users to access
 def random_timestamp(year=None, month=None, day=None, part=None):
-    try:
-        year = int(year)
-        year = (1900, year)[year >= 1900]
-    except:
-        year = randint(1900, int(dt.now().year))
-
-    try:
-        month = int(month)
-        month = (1, month)[(month >= 1) & (month <= 12)]
-    except:
-        month = randint(1, 12)
-
-    try:
-        day = int(day)
-        day = (1, day)[(day >= 1) & (day <= 31)]
-        if day > cal.monthrange(year, month)[1]:
-            day = int('error')
-    except:
-        day = randint(1, cal.monthrange(year, month)[1])
-
-
-    if date(year, month, day) > dt.now().date():
-        timestamp = generate_datetime(dt.now().date())
+    if part == 'TIME':
+        return generate_datetime(dt.now().date()).time()
     else:
-        timestamp = generate_datetime(date(year, month, day))
+        try:
+            year = int(year)
+            year = (1900, year)[year >= 1900]
+        except:
+            year = randint(1900, int(dt.now().year))
 
-    if part is None:
-        return timestamp
-    elif part == 'DATE':
-        return timestamp.date()
-    elif part == 'TIME':
-        return timestamp.time()
+        try:
+            month = int(month)
+            month = (1, month)[(month >= 1) & (month <= 12)]
+        except:
+            month = randint(1, 12)
+
+        try:
+            day = int(day)
+            day = (1, day)[(day >= 1) & (day <= 31)]
+            if day > cal.monthrange(year, month)[1]:
+                day = int('error')
+        except:
+            day = randint(1, cal.monthrange(year, month)[1])
+
+        use_date = None
+        if date(year, month, day) < dt.now().date():
+            use_date = date(year, month, day)
+        else:
+            use_date = dt.now().date()
+
+        if part == 'DATE':
+            return use_date
+        else:
+            return generate_datetime(use_date)
