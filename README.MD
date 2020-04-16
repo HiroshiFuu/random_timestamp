@@ -1,6 +1,29 @@
 # random_timestamp
 A Random Timestamp Generator
 
+## Installation
+
+**Dependences**
+
+    * This app only
+
+**Installation**
+
+    *Installation with pip (recommended)*
+
+        *Pip will download and install the package and take care of all the dependences.
+        If you havn't pip on your system then install setuptools first after that run "easy_install pip".
+        After that you can use pip in your terminal window.*
+
+        * Use the stable release (recommended)::
+
+            pip install random_timestamp
+
+        * With pip you can also uninstall::
+
+            pip uninstall random_timestamp
+
+
 ## Usage
 The function **random_timestamp** takes **four** optional arguments:
 ```
