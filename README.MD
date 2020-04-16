@@ -6,7 +6,8 @@ The function **random_timestamp** takes **four** optional arguments:
 ```
 random_timestamp(year=1900, month=1, day=1, part='DATE/TIME')
 ```
-If **year** and **month** and **day** are not inputed, the timestamp will be randomly generated between _1900_ and today's date (_datetime.now().date())).
+
+If **year** and **month** and **day** are not inputed, the timestamp will be randomly generated between _1900_ and today's date (_datetime.now().date())_).
 
 If a later date after today is inputed, the output date will be today's date as well.
 The optional **part** parameter is to select only the _date_ or _time_ portion of the timestamp to output.
